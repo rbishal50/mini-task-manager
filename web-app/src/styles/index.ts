@@ -137,3 +137,13 @@ export const boardStyle = {
     background: "#888",
   },
 };
+
+export const formWrapper = {
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: { md: 600, xs: "100%" },
+  bgcolor: "background.paper",
+  p: 4,
+};
