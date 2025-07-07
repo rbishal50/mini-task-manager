@@ -45,7 +45,7 @@ const initialTasks: Task[] = [
 
 const useTaskStore = create<TaskState>((set) => ({
   tasks: initialTasks,
-  nextId: 1,
+  nextId: 4,
 
   addTask: (task) =>
     set((state) => {
