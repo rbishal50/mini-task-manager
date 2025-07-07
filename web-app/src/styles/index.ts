@@ -1,3 +1,5 @@
+import { SxProps, Theme } from "@mui/material";
+
 export const headerStyle = {
   display: "flex",
   alignItems: "center",
@@ -15,3 +17,78 @@ export const titleStyle = {
   textTransform: "uppercase",
   letterSpacing: "1px",
 };
+
+export const paperStyle = (statusColor: string) => ({
+  minWidth: 350,
+  backgroundColor: "background.paper",
+  borderRadius: 2,
+  p: 2,
+  m: 1,
+  boxShadow: "0 4px 8px rgba(0,0,0,0.2)",
+  borderTop: `4px solid ${statusColor}`,
+});
+
+export const cardStyle = (
+  statusColor: string,
+  borderColor: string
+): SxProps<Theme> => ({
+  mb: 2,
+  backgroundColor: statusColor,
+  borderLeft: `4px solid ${borderColor}`,
+  position: "relative",
+});
+
+export const menuButtonBoxStyle: SxProps<Theme> = {
+  position: "absolute",
+  top: 8,
+  right: 8,
+  zIndex: 1,
+};
+
+export const menuButtonStyle: SxProps<Theme> = {
+  minWidth: "auto",
+  p: 0.5,
+};
+
+export const statusChipStyle = (
+  theme: Theme,
+  statusColor: string
+): SxProps<Theme> => ({
+  mt: 1,
+  mb: 1.5,
+  fontWeight: 500,
+  backgroundColor: "rgba(255, 255, 255, 0.15)",
+  color: theme.palette.getContrastText(statusColor),
+});
+
+export const infoRowStyle: SxProps<Theme> = {
+  display: "flex",
+  justifyContent: "space-between",
+};
+
+export const infoItemStyle: SxProps<Theme> = {
+  display: "flex",
+  alignItems: "center",
+  mb: 0.5,
+};
+
+export const iconStyle: SxProps<Theme> = {
+  mr: 1,
+  opacity: 0.7,
+};
+
+export const sectionTitleStyle = (theme: Theme): SxProps<Theme> => ({
+  fontWeight: 600,
+  color: theme.palette.primary.main,
+});
+
+export const avatarStyle = (
+  isSelected: boolean,
+  theme: Theme
+): SxProps<Theme> => ({
+  width: 24,
+  height: 24,
+  fontSize: "0.75rem",
+  mr: 1.5,
+  bgcolor: isSelected ? theme.palette.primary.main : theme.palette.grey[700],
+});
