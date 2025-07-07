@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import * as taskModel from "../models/taskModel";
-import { TaskInput } from "../types/task";
+import { TaskInput, TaskUpdate } from "../types/task";
 
 export const getAllTasks = (_req: Request, res: Response): void => {
   const tasks = taskModel.getTasks();
@@ -17,4 +17,17 @@ export const createTask = (req: Request, res: Response): void => {
 
   const newTask = taskModel.addTask(body);
   res.status(201).json(newTask);
+};
+
+export const updateTask = (req: Request, res: Response): void => {
+  const id = req.params.id;
+  const updates = req.body as TaskUpdate;
+
+  const updated = taskModel.updateTask(id, updates);
+  if (!updated) {
+    res.status(404).json({ error: "Task not found" });
+    return;
+  }
+
+  res.json(updated);
 };
