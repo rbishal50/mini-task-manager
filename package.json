@@ -2,9 +2,25 @@
   "name": "mini-task-manager",
   "version": "1.0.0",
   "private": true,
+  "workspaces": [
+    "./api",
+    "./web-app"
+  ],
   "description": "A monorepo for web-app and api for Mini Task Manager",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev:api": "npm run dev --workspace=api",
+    "build:api": "npm run build --workspace=api",
+    "start:api": "npm run start --workspace=api",
+    "test:api": "npm run test --workspace=api",
+    "dev:frontend": "npm run dev --workspace=web-app",
+    "build:frontend": "npm run build --workspace=web-app",
+    "lint:frontend": "npm run lint --workspace=web-app",
+    "preview:frontend": "npm run preview --workspace=web-app",
+    "dev": "concurrently \"npm run dev:api\" \"npm run dev:frontend\"",
+    "build": "npm run build:api && npm run build:frontend",
+    "start": "concurrently \"npm run start:api\"  \"npm run preview:frontend\"",
+    "test": "npm run test:api",
+    "lint": "npm run lint:frontend"
   },
   "author": "Bishal Rana",
   "license": "ISC",
