@@ -1,0 +1,14 @@
+{
+  "name": "mini-task-manager",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A monorepo for web-app and api for Mini Task Manager",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Bishal Rana",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^9.2.0"
+  }
+}
