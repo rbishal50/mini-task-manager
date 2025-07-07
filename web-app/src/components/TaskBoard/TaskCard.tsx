@@ -117,13 +117,23 @@ const TaskCard: React.FC<TaskCardProps> = ({ task, onUpdate }) => {
           onClose={handleMenuClose}
         >
           {task.status === "IN PROGRESS" && [
-            <MenuItem disabled sx={sectionTitleStyle(theme)}>
+            <MenuItem
+              key="status-menu-title"
+              disabled
+              sx={sectionTitleStyle(theme)}
+            >
               Change Status
             </MenuItem>,
-            <MenuItem onClick={() => handleStatusChange("TO DO")}>
+            <MenuItem
+              key="menu-to-do"
+              onClick={() => handleStatusChange("TO DO")}
+            >
               Mark as TO DO
             </MenuItem>,
-            <MenuItem onClick={() => handleStatusChange("DONE")}>
+            <MenuItem
+              key="menu-done"
+              onClick={() => handleStatusChange("DONE")}
+            >
               Mark as DONE
             </MenuItem>,
           ]}
