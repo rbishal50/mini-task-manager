@@ -118,3 +118,22 @@ export const noTasksTextStyle = {
 export const noTasksIconStyle = {
   fontSize: "120px",
 };
+
+export const boardStyle = {
+  display: "flex",
+  overflowX: "auto",
+  "&::-webkit-scrollbar": {
+    height: "8px",
+  },
+  "&::-webkit-scrollbar-track": {
+    background: "#2d2d2d",
+    borderRadius: "4px",
+  },
+  "&::-webkit-scrollbar-thumb": {
+    background: "#555",
+    borderRadius: "4px",
+  },
+  "&::-webkit-scrollbar-thumb:hover": {
+    background: "#888",
+  },
+};
