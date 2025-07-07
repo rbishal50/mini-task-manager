@@ -19,7 +19,7 @@ export const titleStyle = {
 };
 
 export const paperStyle = (statusColor: string) => ({
-  minWidth: 350,
+  minWidth: 368,
   backgroundColor: "background.paper",
   borderRadius: 2,
   p: 2,
@@ -120,6 +120,7 @@ export const noTasksIconStyle = {
 };
 
 export const boardStyle = {
+  width: "100%",
   display: "flex",
   overflowX: "auto",
   "&::-webkit-scrollbar": {
