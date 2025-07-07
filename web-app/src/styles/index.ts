@@ -92,3 +92,29 @@ export const avatarStyle = (
   mr: 1.5,
   bgcolor: isSelected ? theme.palette.primary.main : theme.palette.grey[700],
 });
+
+export const columnHeaderStyle = {
+  mb: 2,
+  fontWeight: 600,
+  color: "text.primary",
+  letterSpacing: "1px",
+};
+
+export const noTasksWrapper = {
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "center",
+  alignItems: "center",
+  marginTop: "50px",
+};
+
+export const noTasksTextStyle = {
+  mb: 2,
+  fontWeight: 400,
+  color: "text.disabled",
+  letterSpacing: "1px",
+};
+
+export const noTasksIconStyle = {
+  fontSize: "120px",
+};
