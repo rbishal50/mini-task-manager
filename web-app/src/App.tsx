@@ -7,6 +7,7 @@ import {
 } from "@mui/material";
 import darkTheme from "./theme/theme";
 import { headerStyle, titleStyle } from "./styles";
+import TaskBoard from "./components/TaskBoard/Taskboard";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             Task Management Board
           </Typography>
         </Box>
+        <TaskBoard />
       </Container>
     </ThemeProvider>
   );
