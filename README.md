@@ -12,6 +12,10 @@
 
 #### npm run dev
 
+#### Webapp opens in [http://localhost:5173](http://localhost:5173/)
+
+#### Api for getting all tasks opens in [http://localhost:3000/api/tasks](http://localhost:3000/api/tasks)
+
 ### Quick Run (Production mode)
 
 #### _Run the following commands after cloning the project in root of the project:_
@@ -21,6 +25,10 @@
 #### npm run build
 
 #### npm run start
+
+#### Webapp opens in [http://localhost:4173](http://localhost:4173/)
+
+#### Api for getting all tasks opens in [http://localhost:3000/api/tasks](http://localhost:3000/api/tasks)
 
 ### Other commands
 
