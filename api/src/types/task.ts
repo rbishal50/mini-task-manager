@@ -4,7 +4,7 @@ export interface Task {
   id: number;
   number: string;
   title: string;
-  description: string;
+  description?: string;
   status: TaskStatus;
   created: string;
   submitter: string;
