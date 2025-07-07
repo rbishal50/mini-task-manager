@@ -52,12 +52,21 @@ const TaskCard: React.FC<TaskCardProps> = ({ task, onUpdate }) => {
   };
 
   const handleStatusChange = (newStatus: TaskStatus) => {
-    onUpdate({ status: newStatus });
+    let assignee = task.assignee;
+    if (task.status === "IN PROGRESS" && newStatus !== "DONE") {
+      assignee = "";
+    }
+
+    onUpdate({ status: newStatus, assignee });
     handleMenuClose();
   };
 
   const handleAssigneeChange = (assignee: string) => {
-    onUpdate({ assignee });
+    let status = task.status;
+    if (task.status === "TO DO") {
+      status = "IN PROGRESS";
+    }
+    onUpdate({ assignee, status });
     handleMenuClose();
   };
 

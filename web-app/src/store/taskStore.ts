@@ -48,6 +48,7 @@ const useTaskStore = create<TaskState>((set) => ({
 
   updateTask: async (id, changes) => {
     set({ loading: true, error: null });
+
     try {
       const updated = await api<Task>(`/tasks/${id}`, {
         method: "PATCH",
