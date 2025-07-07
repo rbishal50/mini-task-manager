@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Button, TextField, MenuItem, Box, Typography } from "@mui/material";
 import { USERS } from "../constants/users";
+import useTaskStore from "../store/taskStore";
 
 interface TaskFormProps {
   onModalClose: () => void;
@@ -10,12 +11,18 @@ const TaskForm: React.FC<TaskFormProps> = ({ onModalClose }) => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [submitter, setSubmitter] = useState(USERS[0]);
+  const addTask = useTaskStore((state) => state.addTask);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!title.trim()) return;
 
-    // TODO Api call
+    addTask({
+      title: title.trim(),
+      description: description.trim(),
+      submitter,
+      assignee: "",
+    });
 
     // Reset form
     setTitle("");
