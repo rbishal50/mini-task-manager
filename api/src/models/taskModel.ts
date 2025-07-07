@@ -61,3 +61,8 @@ export const updateTask = (id: string, updates: TaskUpdate): Task | null => {
 
   return updated;
 };
+
+export const resetTasks = (): void => {
+  db.prepare("DELETE FROM tasks").run();
+  db.prepare("DELETE FROM sqlite_sequence WHERE name='tasks'").run();
+};
