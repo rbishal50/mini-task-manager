@@ -1,19 +1,25 @@
-import { Typography } from "@mui/material";
+import {
+  Box,
+  Container,
+  CssBaseline,
+  ThemeProvider,
+  Typography,
+} from "@mui/material";
+import darkTheme from "./theme/theme";
+import { headerStyle, titleStyle } from "./styles";
 
 function App() {
   return (
-    <Typography
-      variant="h5"
-      sx={{
-        textAlign: "center",
-        fontWeight: 700,
-        color: "primary.main",
-        textTransform: "uppercase",
-        letterSpacing: "1px",
-      }}
-    >
-      Task Management Board
-    </Typography>
+    <ThemeProvider theme={darkTheme}>
+      <Container component="main" sx={{ p: 4 }}>
+        <CssBaseline />
+        <Box sx={headerStyle}>
+          <Typography variant="h5" sx={titleStyle}>
+            Task Management Board
+          </Typography>
+        </Box>
+      </Container>
+    </ThemeProvider>
   );
 }
 
