@@ -7,7 +7,9 @@ interface TaskState {
   loading: boolean;
   error: string | null;
   fetchTasks: () => Promise<void>;
-  addTask: (task: Omit<Task, "status" | "created">) => Promise<void>;
+  addTask: (
+    task: Pick<Task, "title" | "description" | "submitter" | "assignee">
+  ) => Promise<void>;
   updateTask: (id: string, changes: TaskUpdate) => Promise<void>;
 }
 
