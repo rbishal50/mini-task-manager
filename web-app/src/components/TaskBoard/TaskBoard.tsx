@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Box } from "@mui/material";
 import TaskColumn from "./TaskColumn";
 import { TaskStatus } from "../../types/task";
@@ -8,7 +8,12 @@ import useTaskStore from "../../store/taskStore";
 const TaskBoard: React.FC = () => {
   const statuses: TaskStatus[] = ["TO DO", "IN PROGRESS", "DONE"];
   const tasks = useTaskStore((state) => state.tasks);
+  const fetchTasks = useTaskStore((state) => state.fetchTasks);
   const updateTask = useTaskStore((state) => state.updateTask);
+
+  useEffect(() => {
+    fetchTasks();
+  }, [fetchTasks]);
 
   return (
     <Box sx={boardStyle}>

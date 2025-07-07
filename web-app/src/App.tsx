@@ -7,7 +7,7 @@ import {
 } from "@mui/material";
 import darkTheme from "./theme/theme";
 import { headerStyle, titleStyle } from "./styles";
-import TaskBoard from "./components/TaskBoard/Taskboard";
+import TaskBoard from "./components/TaskBoard/TaskBoard";
 import AddTaskModal from "./components/AddTaskModal";
 
 function App() {
